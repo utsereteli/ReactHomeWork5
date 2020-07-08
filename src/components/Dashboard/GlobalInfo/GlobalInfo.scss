@@ -1,0 +1,81 @@
+@import '../Common/Vars.scss';
+@import '../Common/Mixins.scss';
+
+@mixin color($color) {
+    &::after {
+        background: $color;
+        box-shadow: 0 -0.125rem 0.5rem $color;
+    }
+
+    .wrapper .percentage {
+        color: $color;
+    }
+}
+
+.global-info ul li {
+
+    &.blue {
+        @include color($blue);
+    }
+
+    &.red {
+        @include color($red);
+    }
+
+    &.green {
+        @include color($green);
+    }
+
+    &.yellow {
+        @include color($yellow);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: calc(100% - 2.4rem);
+        height: 0.425rem;
+        border-radius: 2rem;
+        animation: 1s ease colorAnimation;
+
+        @keyframes colorAnimation {
+            from {
+                height: 0;
+            }
+        }
+    }
+
+    & > h1 {
+        color: #333;
+        font-size: 1.125rem;
+        font-weight: normal;
+    }
+
+    .wrapper {
+        display: flex;
+        margin-top: 0.5rem;
+        align-items: center;
+
+        .percentage {
+            padding: 0.4375rem;
+        }
+
+        .right {
+            margin-left: auto;
+            text-align: right;
+
+            .total {
+                font-size: 1.875rem;
+            }
+
+            .today {
+                color: rgba(113, 113, 113, 0.62);
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

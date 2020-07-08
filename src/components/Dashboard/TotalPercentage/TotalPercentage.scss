@@ -1,0 +1,56 @@
+@import '../Common/Vars.scss';
+@import '../Common/Mixins.scss';
+
+@mixin color($color) {
+    background: $color;
+    transition: 0.3s ease;
+    box-shadow: 0 0 0.5625rem $color;
+}
+
+
+.total-percentage {
+    background-color: #fff;
+    @include box();
+
+    h1 {
+        font-size: 1.125rem;
+        margin-left: 1rem;
+        box-sizing: border-box;
+    }
+
+    ul li {
+        position: relative;
+        background-color: #f2f4f5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: none !important;
+
+        &.blue {
+            @include color($blue);
+        }
+
+        &.red {
+            @include color($red);
+        }
+
+        &.green {
+            @include color($green);
+        }
+
+        &.yellow {
+            @include color($yellow);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-top: 0.4rem;
+            letter-spacing: 0.0375rem;
+        }
+    }
+}

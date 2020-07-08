@@ -1,0 +1,9 @@
+@mixin box($radius: 0.625rem) {
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 1rem;
+    border-radius: $radius;
+    box-shadow: 0rem 0.125rem 3.125rem rgba(0, 0, 0, 0.04);
+    padding: 1.2rem;
+    border: 0.0625rem solid #ebebeb;
+}
